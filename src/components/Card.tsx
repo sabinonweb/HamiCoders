@@ -4,8 +4,8 @@ import {
   CommentButton,
   ShareButton,
 } from "../utilities/cardButton";
-
-function Card() {
+import { PostData } from "../utilities/CardElement";
+function Card({PostElement}:{ PostElement: PostData }) {
   return (
     <div className="bg-themeFloat p-4 rounded-lg shadow border-[1px] border-themeBgNotification">
       <div className="mb-2">
@@ -16,14 +16,14 @@ function Card() {
         ></img>
       </div>
       <p className="text-xl font-semibold mb-2 text-themeLabelPrimary">
-        Forward Compatibility and Toolchain Management in Go 1.21
+        {PostElement.title}
       </p>
       <p className="text-sm font-normal mb-2 text-themeLabelSeconday  ">
-        Aug 2023 . 5 min read
+        {PostElement.date}
       </p>
       <div className="max-w-lg mx-auto ">
         <img
-          src="https://picsum.photos/600/400"
+          src={PostElement.image}
           alt="Image"
           className="w-full h-40 rounded-lg object-cover "
         ></img>
