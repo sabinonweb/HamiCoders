@@ -107,9 +107,19 @@ const DrawerOpen = (drawerOpen: boolean) => {
     },
   ];
 
+  const fadeIn = {
+    opacity: 1,
+    transition: "opacity 0.5s ease-in",
+  };
+
+  const fadeOut = {
+    opacity: 0,
+    transition: "opacity 0.5s ease-out",
+  };
+
   return (
     <div
-      className="bg-black flex flex-1 flex-col w-4/12 "
+      className="bg-black flex flex-1 flex-col w-5/12 "
       style={{ justifyContent: "space-between" }}
     >
       <div className="mt-20" style={{ flex: 0.57 }}>
@@ -122,13 +132,15 @@ const DrawerOpen = (drawerOpen: boolean) => {
               justifyContent: "flex-start",
               alignItems: "center",
             }}
-            className={`my-1 ${drawerOpen ? "fadeIn" : "fadeOut"}`}
+            className={`my-1 ${drawerOpen ? fadeIn : fadeOut}`}
           >
             {React.cloneElement(list.icon, {
               style: { fontSize: "20px", color: "gray" },
             })}
             <div
-              className="text-base ml-4 text-slate-400 ease-in duration-500"
+              className={`text-base ml-4 text-slate-400 ${
+                drawerOpen ? fadeIn : fadeOut
+              }`}
               style={{ alignSelf: "center" }}
             >
               {list.name}
@@ -147,7 +159,7 @@ const DrawerOpen = (drawerOpen: boolean) => {
               justifyContent: "flex-start",
               alignItems: "center",
             }}
-            className={`my-1 ${drawerOpen ? "fadeIn" : "fadeOut"}`}
+            className={`my-1 ${drawerOpen ? fadeIn : fadeOut}`}
           >
             {React.cloneElement(list.icon, {
               style: {
@@ -188,7 +200,7 @@ const DrawerOpen = (drawerOpen: boolean) => {
               justifyContent: "flex-start",
               alignItems: "center",
             }}
-            className={`my-1 ${drawerOpen ? "fadeIn" : "fadeOut"}`}
+            className={`my-1 ${drawerOpen ? fadeIn : fadeOut}`}
           >
             {React.cloneElement(list.icon, {
               style: { fontSize: "20px", color: "gray" },
@@ -208,7 +220,7 @@ const DrawerOpen = (drawerOpen: boolean) => {
               justifyContent: "flex-start",
               alignItems: "center",
             }}
-            className={`my-2 ${drawerOpen ? "fadeIn" : "fadeOut"}`}
+            className={`my-2 ${drawerOpen ? fadeIn : fadeOut}`}
           >
             {React.cloneElement(list.icon, {
               style: { fontSize: "20px", color: "gray" },
