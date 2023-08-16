@@ -9,7 +9,6 @@ import {
   PauseCircleOutlined,
   HomeOutlined,
   PlusCircleOutlined,
-  LeftOutlined,
   SoundOutlined,
   FileTextOutlined,
   MinusSquareOutlined,
@@ -20,7 +19,6 @@ import {
   EyeOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-import { useState } from "react";
 const DrawerOpen = () => {
   const feedData = [
     {
@@ -108,31 +106,12 @@ const DrawerOpen = () => {
       icon: <ShareAltOutlined />,
     },
   ];
-  // const [drawerOpen, setDrawerOpen] = useState(false);
-  // const buttonClick = () => {
-  //   setDrawerOpen((prevState) => !prevState);
-  // };
 
   return (
     <div
       className="bg-black flex flex-1 flex-col w-5/12"
       style={{ justifyContent: "space-between" }}
     >
-      {/* <div style={{ flex: 0.03 }} className="bg-purple-100">
-        <button onClick={buttonClick} aria-label="close sidebar">
-          {React.cloneElement(<LeftOutlined />, {
-            style: {
-              fontSize: 25,
-              color: "black",
-              position: "absolute",
-              top: 40,
-              left: 170,
-              backgroundColor: "lightgray",
-              borderRadius: 10,
-            },
-          })}
-        </button>
-      </div> */}
       <div className="mt-20 bg-orange-200" style={{ flex: 0.57 }}>
         {feedData.map((list, index) => (
           <div
