@@ -3,7 +3,7 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import DrawerClose from "./DrawerClose";
 import DrawerOpen from "./DrawerOpen";
 const Navigation = () => {
-  const [drawerOpen, setDrawerOpen] = useState(true);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const buttonClick = () => {
     setDrawerOpen((prevState) => !prevState);
     console.log("Clicked");
@@ -19,17 +19,28 @@ const Navigation = () => {
       <div style={{ flex: 0.03 }} className="">
         <button onClick={buttonClick}>
           {React.cloneElement(
-            drawerOpen ? <RightOutlined /> : <LeftOutlined />,
+            drawerOpen ? <LeftOutlined /> : <RightOutlined />,
             {
-              style: {
-                fontSize: 25,
-                color: "black",
-                position: "absolute",
-                top: 40,
-                left: 170,
-                backgroundColor: "lightgray",
-                borderRadius: 10,
-              },
+              style: drawerOpen
+                ? {
+                    fontSize: 25,
+                    color: "black",
+                    position: "absolute",
+                    top: 40,
+                    left: 170,
+                    backgroundColor: "lightgray",
+                    borderRadius: 10,
+                    transition: "margin-right 2s ease",
+                  }
+                : {
+                    fontSize: 25,
+                    color: "black",
+                    position: "absolute",
+                    top: 40,
+                    left: 20,
+                    backgroundColor: "lightgray",
+                    borderRadius: 10,
+                  },
             }
           )}
         </button>

@@ -108,17 +108,17 @@ const DrawerOpen = () => {
       icon: <ShareAltOutlined />,
     },
   ];
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const buttonClick = () => {
-    setDrawerOpen((prevState) => !prevState);
-  };
+  // const [drawerOpen, setDrawerOpen] = useState(false);
+  // const buttonClick = () => {
+  //   setDrawerOpen((prevState) => !prevState);
+  // };
 
   return (
     <div
       className="bg-black flex flex-1 flex-col w-5/12"
       style={{ justifyContent: "space-between" }}
     >
-      <div style={{ flex: 0.03 }} className="bg-purple-100">
+      {/* <div style={{ flex: 0.03 }} className="bg-purple-100">
         <button onClick={buttonClick} aria-label="close sidebar">
           {React.cloneElement(<LeftOutlined />, {
             style: {
@@ -132,7 +132,7 @@ const DrawerOpen = () => {
             },
           })}
         </button>
-      </div>
+      </div> */}
       <div className="mt-20 bg-orange-200" style={{ flex: 0.57 }}>
         {feedData.map((list, index) => (
           <div
