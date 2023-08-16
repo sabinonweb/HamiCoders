@@ -25,3 +25,13 @@ body
 {
   background-color: var(--themeBgPrimary);
 }
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}

@@ -19,7 +19,7 @@ import {
   EyeOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-const DrawerOpen = () => {
+const DrawerOpen = (drawerOpen: boolean) => {
   const feedData = [
     {
       name: "My feed",
@@ -109,10 +109,10 @@ const DrawerOpen = () => {
 
   return (
     <div
-      className="bg-black flex flex-1 flex-col w-5/12"
+      className="bg-black flex flex-1 flex-col w-4/12 "
       style={{ justifyContent: "space-between" }}
     >
-      <div className="mt-20 bg-orange-200" style={{ flex: 0.57 }}>
+      <div className="mt-20" style={{ flex: 0.57 }}>
         {feedData.map((list, index) => (
           <div
             key={index}
@@ -122,20 +122,22 @@ const DrawerOpen = () => {
               justifyContent: "flex-start",
               alignItems: "center",
             }}
-            className="my-1"
+            className={`my-1 ${drawerOpen ? "fadeIn" : "fadeOut"}`}
           >
             {React.cloneElement(list.icon, {
               style: { fontSize: "20px", color: "gray" },
             })}
             <div
-              className="text-base ml-4 text-slate-400 "
+              className="text-base ml-4 text-slate-400 ease-in duration-500"
               style={{ alignSelf: "center" }}
             >
               {list.name}
             </div>
           </div>
         ))}
-        <div className="text-slate-700 text-sm font-bold">Discover</div>
+        <div className="text-slate-700 text-sm font-bold ease-in duration-500">
+          Discover
+        </div>
         {discoverData.map((list, index) => (
           <div
             key={index}
@@ -145,10 +147,13 @@ const DrawerOpen = () => {
               justifyContent: "flex-start",
               alignItems: "center",
             }}
-            className="my-2"
+            className={`my-1 ${drawerOpen ? "fadeIn" : "fadeOut"}`}
           >
             {React.cloneElement(list.icon, {
-              style: { fontSize: "20px", color: "gray" },
+              style: {
+                fontSize: "20px",
+                color: "gray",
+              },
             })}
             <div className="text-base ml-2 text-slate-400">{list.name}</div>
           </div>
@@ -168,10 +173,12 @@ const DrawerOpen = () => {
             {React.cloneElement(list.icon, {
               style: { fontSize: "20px", color: "gray" },
             })}
-            <div className="text-base ml-2 text-slate-400">{list.name}</div>
+            <div className="text-base ml-2 text-slate-400 ease-in duration-500">
+              {list.name}
+            </div>
           </div>
         ))}
-        <div className="text-gray-700 text-sm font-bold">Manage</div>
+        <div className="text-gray-700 text-sm">Manage</div>
         {manageData.map((list, index) => (
           <div
             key={index}
@@ -181,7 +188,7 @@ const DrawerOpen = () => {
               justifyContent: "flex-start",
               alignItems: "center",
             }}
-            className="my-2"
+            className={`my-1 ${drawerOpen ? "fadeIn" : "fadeOut"}`}
           >
             {React.cloneElement(list.icon, {
               style: { fontSize: "20px", color: "gray" },
@@ -190,10 +197,8 @@ const DrawerOpen = () => {
           </div>
         ))}
       </div>
-      <div
-        style={{ flex: 0.1, padding: "60px 0", backgroundColor: "#99c0de" }}
-      />
-      <div style={{ flex: 0.2 }} className="bg-green-300">
+      <div style={{ flex: 0.1, padding: "60px 0" }} />
+      <div style={{ flex: 0.2 }} className="">
         {footerData.map((list, index) => (
           <div
             key={index}
@@ -203,7 +208,7 @@ const DrawerOpen = () => {
               justifyContent: "flex-start",
               alignItems: "center",
             }}
-            className="my-2"
+            className={`my-2 ${drawerOpen ? "fadeIn" : "fadeOut"}`}
           >
             {React.cloneElement(list.icon, {
               style: { fontSize: "20px", color: "gray" },
@@ -213,7 +218,7 @@ const DrawerOpen = () => {
         ))}
       </div>
       <div
-        className="border-2 bg-red-300 text-slate-400 border-slate-400 p-2 w-44 flex flex-row justify-center rounded-xl mt-4"
+        className="border-2 text-slate-400 border-slate-400 p-2 w-44 flex flex-row justify-center rounded-xl mt-4"
         style={{ flex: 0.1 }}
       >
         <img src="../assets/images/daily.png" />

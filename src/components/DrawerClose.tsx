@@ -19,7 +19,7 @@ import {
   EyeOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-const DrawerClose = () => {
+const DrawerOpen = () => {
   const feedData = [
     {
       name: "My feed",
@@ -109,10 +109,10 @@ const DrawerClose = () => {
 
   return (
     <div
-      className="bg-black flex flex-1 flex-col w-1/12"
+      className="bg-black flex flex-1 flex-col w-1/12 "
       style={{ justifyContent: "space-between" }}
     >
-      <div className="mt-20 bg-orange-200" style={{ flex: 0.57 }}>
+      <div className="mt-20" style={{ flex: 0.57 }}>
         {feedData.map((list, index) => (
           <div
             key={index}
@@ -125,11 +125,11 @@ const DrawerClose = () => {
             className="my-1"
           >
             {React.cloneElement(list.icon, {
-              style: { fontSize: "20px", color: "gray" },
+              style: { fontSize: "20px", color: "gray", marginVertical: 2 },
             })}
           </div>
         ))}
-        <div className="py-2"></div>
+        <div className="text-slate-700 text-sm font-bold h-5"></div>
         {discoverData.map((list, index) => (
           <div
             key={index}
@@ -142,11 +142,14 @@ const DrawerClose = () => {
             className="my-2"
           >
             {React.cloneElement(list.icon, {
-              style: { fontSize: "20px", color: "gray" },
+              style: {
+                fontSize: "20px",
+                color: "gray",
+              },
             })}
           </div>
         ))}
-        <div className="py-2"></div>
+        <div className="text-gray-700 text-sm font-bold h-5"></div>
         {contributeData.map((list, index) => (
           <div
             key={index}
@@ -163,7 +166,7 @@ const DrawerClose = () => {
             })}
           </div>
         ))}
-
+        <div className="text-gray-700 text-sm font-bold h-5"></div>
         {manageData.map((list, index) => (
           <div
             key={index}
@@ -181,10 +184,8 @@ const DrawerClose = () => {
           </div>
         ))}
       </div>
-      <div
-        style={{ flex: 0.1, padding: "150px 0", backgroundColor: "#99c0de" }}
-      />
-      <div style={{ flex: 0.3 }} className="bg-green-300">
+      <div style={{ flex: 0.1, padding: "60px 0" }} />
+      <div style={{ flex: 0.2 }} className="">
         {footerData.map((list, index) => (
           <div
             key={index}
@@ -202,8 +203,18 @@ const DrawerClose = () => {
           </div>
         ))}
       </div>
+      <div
+        className="border-2 text-slate-400 border-slate-400 p-2 w-44 flex flex-row justify-center rounded-xl mt-4"
+        style={{ flex: 0.1 }}
+      >
+        <img src="../assets/images/daily.png" />
+        <div className="flex-col ml-3">
+          <div className="text-base">No rank</div>
+          <div className="text-xs">Re-earn: 0/1 days</div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default DrawerClose;
+export default DrawerOpen;
