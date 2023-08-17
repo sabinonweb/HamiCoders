@@ -1,24 +1,29 @@
-import {
-    CommentOutlined,
-    LikeOutlined,
-    ShareAltOutlined,
-  } from "@ant-design/icons";
-
+import { BiUpvote, BiSolidUpvote } from "react-icons/bi";
+import { FaRegCommentDots, FaCommentDots } from "react-icons/fa";
+import { IoIosShare } from "react-icons/io";
 interface CardButton {
-    icon: React.ReactNode;
-    color: string;
-    value?: number;
-  }
-  
-  const createCardButton = (
-    icon: React.ReactNode,
-    color:string,
-    value?: number,
-  ): CardButton => {
-    return { icon, value,color };
-  };
-  
-  const LikeButton = createCardButton(<LikeOutlined></LikeOutlined>,'#39e58c',6);
-  const CommentButton = createCardButton(<CommentOutlined />,'#8d62f4',9);
-  const ShareButton = createCardButton(<ShareAltOutlined />,'#8d62f4');
-  export {LikeButton,CommentButton,ShareButton};
+  icon: React.ReactNode;
+  color: string;
+  value?: number;
+}
+
+const createCardButton = (
+  icon: React.ReactNode,
+  color: string,
+  value?: number
+): CardButton => {
+  return { icon, value, color };
+};
+
+const LikeButton = createCardButton(
+  <BiUpvote></BiUpvote>,
+  "themeGreenButton",
+  6
+);
+const CommentButton = createCardButton(
+  <FaRegCommentDots />,
+  "themeCyanButton",
+  9
+);
+const ShareButton = createCardButton(<IoIosShare />, "themePurpleButton");
+export { LikeButton, CommentButton, ShareButton };
