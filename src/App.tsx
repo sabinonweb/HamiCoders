@@ -1,9 +1,7 @@
-import React from "react";
-import Navigation from "./components/Navigation";
-import MainDisplay from "./components/mainDisplay";
+import Home from "./pages/Home";
 
 function App() {
-  return <Navigation />;
+  return <Home/>;
 }
 
 export default App;
