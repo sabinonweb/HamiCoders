@@ -1,6 +1,10 @@
+
 import Card from "./Card";
 import Tilt from "react-parallax-tilt";
 import Posts from "../utilities/CardElement";
+import { createContext } from "react";
+import { PostData } from "../utilities/CardElement";
+export const PostContext = createContext<PostData | undefined>(undefined);
 // import { createContext } from "react";
 // import { PostData } from "../utilities/CardElement";
 // export interface PostContextType {
@@ -24,7 +28,9 @@ function MainDisplay() {
                 scale={1.01}
                 key={PostElement.id}
               >
-                <Card PostElement={PostElement}></Card>
+                  <PostContext.Provider value={PostElement}>
+                  <Card PostElement={PostElement}></Card>
+                  </PostContext.Provider>
               </Tilt>
             );
           })}

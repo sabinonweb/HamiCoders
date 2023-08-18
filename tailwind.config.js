@@ -19,7 +19,7 @@ export default {
         themeLabelTertiary: "#a8b3cf",
         themeLabelQuard: "#a8b3cfa3",
         themeGreenButton : "#39e58c",
-        themeCyanButton : "#8d62f4",
+        themeOrangeButton : "#ff9470",
         themePurpleButton : "#ce3df3",
       },
     },

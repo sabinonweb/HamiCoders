@@ -1,18 +1,24 @@
-import CardFunctionalButton from "./CardFunctionalButton";
+import { useContext } from "react"; 
 import { MdOpenInNew } from "react-icons/md";
 import { SlOptionsVertical } from "react-icons/sl";
-import {
-  LikeButton,
-  CommentButton,
-  ShareButton,
-} from "../utilities/cardButton";
 import { PostData } from "../utilities/CardElement";
 import { useEffect, useRef, useState } from "react";
 import FloatCardMenu from "./FloatCardMenu";
+import CardButtonComponent from "./cardfunctions/CardButtonComponent";
+
 
 function Card({ PostElement }: { PostElement: PostData }) {
+  
   const [isHovering, setIsHovering] = useState(false);
   const [isOptionClick, setIsOptionClick] = useState(false);
+  useEffect(() => {
+    const handler = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOptionClick(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+  });
   const handleMouseOver = () => {
     setIsHovering(true);
   };
@@ -24,14 +30,6 @@ function Card({ PostElement }: { PostElement: PostData }) {
   };
   let menuRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handler = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOptionClick(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-  });
 
   return (
     <div
@@ -58,7 +56,12 @@ function Card({ PostElement }: { PostElement: PostData }) {
             </p>
           </div>
         )}
-        {isOptionClick && <FloatCardMenu menuRef={menuRef} isClick = {isOptionClick}></FloatCardMenu>}
+        {isOptionClick && (
+          <FloatCardMenu
+            menuRef={menuRef}
+            isClick={isOptionClick}
+          ></FloatCardMenu>
+        )}
       </div>
 
       <p className="text-xl font-semibold mb-2 text-themeLabelPrimary">
@@ -74,12 +77,7 @@ function Card({ PostElement }: { PostElement: PostData }) {
           className="w-full h-40 rounded-lg object-cover "
         ></img>
       </div>
-
-      <div className="flex justify-between mt-2">
-        <CardFunctionalButton button={LikeButton}></CardFunctionalButton>
-        <CardFunctionalButton button={CommentButton}></CardFunctionalButton>
-        <CardFunctionalButton button={ShareButton}></CardFunctionalButton>
-      </div>
+      <CardButtonComponent></CardButtonComponent>
     </div>
   );
 }
