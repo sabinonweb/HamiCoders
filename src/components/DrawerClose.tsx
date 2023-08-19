@@ -19,7 +19,7 @@ import {
   EyeOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-const DrawerOpen = () => {
+const DrawerOpen = (drawerOpen) => {
   const feedData = [
     {
       name: "My feed",
@@ -109,7 +109,7 @@ const DrawerOpen = () => {
 
   return (
     <div
-      className="bg-black flex flex-1 flex-col w-1/12 "
+      className="bg-black flex flex-1 flex-col w-1/12 h-full"
       style={{ justifyContent: "space-between" }}
     >
       <div className="mt-20" style={{ flex: 0.57 }}>
@@ -125,7 +125,7 @@ const DrawerOpen = () => {
             className="my-1"
           >
             {React.cloneElement(list.icon, {
-              style: { fontSize: "20px", color: "gray", marginVertical: 2 },
+              style: { fontSize: "20px", color: "gray" },
             })}
           </div>
         ))}
@@ -202,16 +202,6 @@ const DrawerOpen = () => {
             })}
           </div>
         ))}
-      </div>
-      <div
-        className="border-2 text-slate-400 border-slate-400 p-2 w-44 flex flex-row justify-center rounded-xl mt-4"
-        style={{ flex: 0.1 }}
-      >
-        <img src="../assets/images/daily.png" />
-        <div className="flex-col ml-3">
-          <div className="text-base">No rank</div>
-          <div className="text-xs">Re-earn: 0/1 days</div>
-        </div>
       </div>
     </div>
   );

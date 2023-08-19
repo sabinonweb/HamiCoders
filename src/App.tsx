@@ -1,10 +1,12 @@
-import React from "react";
-import Navigation from "./components/Navigation";
-import MainDisplay from "./components/mainDisplay";
-import Profile from "./components/Profile";
+import DrawerOpen from "./components/DrawerClose";
 
 function App() {
-  return <Navigation />;
+  return (
+    <div className="flex flex-row">
+      <DrawerOpen />
+      {/* <Profile /> */}
+    </div>
+  );
 }
 
 export default App;

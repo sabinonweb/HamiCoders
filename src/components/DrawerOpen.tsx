@@ -19,7 +19,7 @@ import {
   EyeOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-const DrawerOpen = (drawerOpen: boolean) => {
+const DrawerOpen = ({ drawerOpen }) => {
   const feedData = [
     {
       name: "My feed",
@@ -119,10 +119,10 @@ const DrawerOpen = (drawerOpen: boolean) => {
 
   return (
     <div
-      className="bg-black flex flex-1 flex-col w-5/12 "
-      style={{ justifyContent: "space-between" }}
+      className="bg-red-500 flex flex-1 flex-col  ease-in duration-300"
+      style={{ justifyContent: "space-between", width: "10%" }}
     >
-      <div className="mt-20" style={{ flex: 0.57 }}>
+      <div className="mt-20 bg-orange-300" style={{ flex: 0.57 }}>
         {feedData.map((list, index) => (
           <div
             key={index}
@@ -159,7 +159,7 @@ const DrawerOpen = (drawerOpen: boolean) => {
               justifyContent: "flex-start",
               alignItems: "center",
             }}
-            className={`my-1 ${drawerOpen ? fadeIn : fadeOut}`}
+            className={`my-1 bg-teal-400 ${drawerOpen ? fadeIn : fadeOut}`}
           >
             {React.cloneElement(list.icon, {
               style: {
@@ -167,7 +167,13 @@ const DrawerOpen = (drawerOpen: boolean) => {
                 color: "gray",
               },
             })}
-            <div className="text-base ml-2 text-slate-400">{list.name}</div>
+            <div
+              className={`text-base ml-4 text-slate-400 ${
+                drawerOpen ? fadeIn : fadeOut
+              }`}
+            >
+              {list.name}
+            </div>
           </div>
         ))}
         <div className="text-gray-700 text-sm font-bold">Contribute</div>
