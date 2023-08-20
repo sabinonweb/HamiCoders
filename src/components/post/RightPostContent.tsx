@@ -1,11 +1,17 @@
 import { FacebookFilled } from "@ant-design/icons";
+import { useContext } from "react";
 import { BiCopy } from "react-icons/bi";
 import { IoLogoTwitter, IoMdClose } from "react-icons/io";
 import { MdOpenInNew } from "react-icons/md";
 import { SlOptionsVertical } from "react-icons/sl";
+import { PostContext } from "./PostDisplay";
+
+
 
 function RightPostContent() {
+  const postValue = useContext(PostContext);
   return (
+
     <div className="w-2/5 p-4">
       <div className="flex flex-row items-center justify-between">
         <p className="text-sm text-white bg-themePurpleButton p-2 rounded-md flex items-center gap-2 cursor-pointer font-bold">
@@ -67,6 +73,8 @@ function RightPostContent() {
         </div>
       </div>
     </div>
+
+
   );
 }
 

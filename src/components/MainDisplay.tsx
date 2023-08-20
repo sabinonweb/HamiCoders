@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
 import Tilt from "react-parallax-tilt";
 import Posts from "../utilities/CardElement";
 import { createContext } from "react";
 import { PostData } from "../utilities/CardElement";
-import PostDisplay from "./post/PostDisplay";
+import { Link, Outlet } from "react-router-dom";
 export const PostContext = createContext<PostData | undefined>(undefined);
 // import { createContext } from "react";
 // import { PostData } from "../utilities/CardElement";
@@ -14,14 +14,15 @@ export const PostContext = createContext<PostData | undefined>(undefined);
 // export const PostContext = createContext<PostContextType | undefined>(undefined);
 
 function MainDisplay() {
+
   return (
     <React.Fragment>
-      <PostDisplay/>
+      <Outlet/>
       <section className="MainContainer">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-6xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
             {Posts.map((PostElement) => {
-              return (
+              return (<>
                 <Tilt
                   className="parallax-effect-glare-scale"
                   tiltEnable={false}
@@ -32,10 +33,10 @@ function MainDisplay() {
                   key={PostElement.id}
                 >
                   <PostContext.Provider value={PostElement}>
-                    <Card PostElement={PostElement}></Card>
+                    <Link to={`/posts/${PostElement.id}`}><Card PostElement={PostElement}></Card></Link>
                   </PostContext.Provider>
                 </Tilt>
-              );
+              </>);
             })}
           </div>
         </div>
