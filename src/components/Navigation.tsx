@@ -190,12 +190,7 @@ const Navigation = () => {
               }
               initial={false}
               animate={{
-                x:
-                  activeButton === list.key
-                    ? activeButton < index
-                      ? -12
-                      : 12
-                    : 0,
+                x: activeButton === list.key ? 12 : 0,
               }}
               transition={{ type: spring }}
             ></motion.div>
