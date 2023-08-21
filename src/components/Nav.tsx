@@ -12,7 +12,7 @@ import {
   contributeData,
 } from "../utilities/NavigationData";
 
-const Navigation = () => {
+const Nav = () => {
   const [activeButton, setActiveButton] = useState(-1);
   const [isClicked, setIsClicked] = useState(true);
 
@@ -35,37 +35,6 @@ const Navigation = () => {
           />
         )}
       </motion.button>
-
-      <motion.div
-        className={`border-t border-slate-700 bottom-0 absolute w-full flex justify-between items-center bottom`}
-      >
-        {mobileData.map((list) => (
-          <motion.button
-            className={` hover:bg-slate-500 w-28 rounded-xl`}
-            onClick={() => setActiveButton(list.key)}
-          >
-            <motion.div
-              className={
-                activeButton === list.key
-                  ? "bg-slate-50 h-1  w-16 flex justify-center"
-                  : undefined
-              }
-              initial={false}
-              animate={{
-                x: activeButton === list.key ? 12 : 0,
-              }}
-              transition={{ type: spring }}
-            ></motion.div>
-            <FontAwesomeIcon
-              key={list.key}
-              icon={list.icon}
-              className={`${
-                activeButton === list.key ? "text-white mb-1" : "text-slate-400"
-              } text-2xl hover:text-white mt-2`}
-            />
-          </motion.button>
-        ))}
-      </motion.div>
 
       <motion.div
         className={`${isClicked ? "w-60" : "w-10"} navbar`}
@@ -282,4 +251,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Nav;

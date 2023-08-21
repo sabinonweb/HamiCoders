@@ -3,6 +3,9 @@
         display: none;
         transition: width 3s;
     }
+    .topbar {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -10,8 +13,12 @@
         display: none;
         transition: width 3s;
     }
+    .topBottom {
+        display: none;
+    }
 }
 
 .animate {
     transform: translateX(24) 3s;
 }
+

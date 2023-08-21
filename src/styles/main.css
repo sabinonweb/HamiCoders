@@ -31,6 +31,9 @@ body
   transition: opacity 0.5s ease-in;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
 .fadeOut {
   opacity: 0;
   transition: opacity 0.5s ease-out;

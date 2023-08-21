@@ -1,13 +1,7 @@
-import Navigation from "./components/Navigation";
+import Secondary from "./components/Secondary";
 
 function App() {
-  return (
-    <div className="flex flex-1 flex-row h-full">
-      <div className="border border-gray-600">
-        <Navigation />
-      </div>
-    </div>
-  );
+  return <Secondary />;
 }
 
 export default App;
