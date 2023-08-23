@@ -1,6 +1,6 @@
 import Navigation from "./Navigation";
 import TopTab from "./TopTab";
-import Squad from "./NavFiles/Squad";
+import SquadJoinCard from "./NavFiles/SquadJoinCard";
 
 function Secondary() {
   return (
@@ -14,6 +14,9 @@ function Secondary() {
       <div className="flex flex-row">
         <div className="border border-slate-600">
           <Navigation />
+        </div>
+        <div>
+          <SquadJoinCard />
         </div>
       </div>
     </div>

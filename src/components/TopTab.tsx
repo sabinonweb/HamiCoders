@@ -1,15 +1,15 @@
 import * as solidIcons from "@fortawesome/free-solid-svg-icons";
 import * as regularIcons from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+// import { useState } from "react";
 import "../styles/Navigation.css";
-import Navigation from "./Navigation";
+// import Navigation from "./Navigation";
 
-const [isOpen, setIsOpen] = useState(false);
+// const [isOpen, setIsOpen] = useState(false);
 
-const handleOpen = () => {
-  setIsOpen((prevState) => !prevState);
-};
+// const handleOpen = () => {
+//   setIsOpen((prevState) => !prevState);
+// };
 
 const TopTab = () => {
   return (
@@ -21,8 +21,8 @@ const TopTab = () => {
             icon={solidIcons.faCode}
             className="text-3xl text-gray-600"
           />
-          <div className="text-xl ml-3 text-white font-bold">daily</div>
-          <div className="text-base mt-2">.dev</div>
+          <div className="text-xl ml-3 text-white font-bold">Hami</div>
+          <div className="text-base mt-2">.coders</div>
         </div>
         <div className="flex flex-row">
           <div className="bg-gray-800 flex justify-center items-center rounded-xl">
@@ -42,7 +42,7 @@ const TopTab = () => {
 
       <div className="text-slate-500 flex justify-between items-center h-14 topBottom">
         <div className="flex flex-row items-center">
-          <button onClick={handleOpen}>
+          <button>
             <FontAwesomeIcon
               icon={solidIcons.faBars}
               className="text-2xl text-gray-600 ml-4"
@@ -50,8 +50,8 @@ const TopTab = () => {
           </button>
         </div>
         <div className="flex flex-row items-center">
-          <div className="text-xl ml-3 text-white font-bold">daily</div>
-          <div className="text-base mt-2">.dev</div>
+          <div className="text-xl ml-3 text-white font-bold">Hami</div>
+          <div className="text-base mt-1">.coders</div>
         </div>
         <div className="flex flex-row">
           <div className="bg-gray-800 flex justify-center items-center rounded-xl h-10">
@@ -63,7 +63,7 @@ const TopTab = () => {
         </div>
       </div>
 
-      {isOpen && <Navigation />}
+      {/* {isOpen && <Navigation />} */}
     </>
   );
 };

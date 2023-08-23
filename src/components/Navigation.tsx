@@ -37,17 +37,18 @@ const Navigation = () => {
       </motion.button>
 
       <motion.div
-        className={`border-t border-slate-700 bottom-0 absolute w-full flex justify-between items-center bottom`}
+        className={`border-t border-slate-700 bottom-0  w-full flex justify-between items-center bottom fixed bg-black`}
       >
         {mobileData.map((list) => (
           <motion.button
             className={` hover:bg-slate-500 w-28 rounded-xl`}
             onClick={() => setActiveButton(list.key)}
+            key={list.key}
           >
             <motion.div
               className={
                 activeButton === list.key
-                  ? "bg-slate-50 h-1  w-16 flex justify-center"
+                  ? "bg-slate-50 h-1 basis w-20 justify-center items-center"
                   : undefined
               }
               initial={false}
@@ -124,7 +125,7 @@ const Navigation = () => {
           hover:border hover:bg-slate-800 hover:border-slate-800 hover:text-white
           ${
             activeButton === list.key
-              ? "border bg-slate-800 w-full border-slate-800 text-white"
+              ? "border bg-slate-800 w-full border-slate-800 text-white f"
               : "text-gray-500"
           }
   `}
