@@ -1,11 +1,11 @@
-import Squad from "./components/NavFiles/Squad";
-import Navigation from "./components/Navigation";
+import SquadModal from "./components/SquadModal";
 import Secondary from "./components/Secondary";
 
 function App() {
   return (
     <>
       <Secondary />
+      <SquadModal />
     </>
   );
 }

@@ -1,9 +1,4 @@
 import React from "react";
-import {
-  createBrowserRouter,
-  useRouteError,
-  RouterProvider,
-} from "react-router-dom";
 import "./styles/tailwind.css";
 import "./styles/main.css";
 import Router from "./Router";

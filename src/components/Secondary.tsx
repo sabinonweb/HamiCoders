@@ -1,6 +1,6 @@
 import Navigation from "./Navigation";
 import TopTab from "./TopTab";
-import SquadJoinCard from "./NavFiles/SquadJoinCard";
+import SquadJoinCard from "./SquadJoinCard";
 
 function Secondary() {
   return (
